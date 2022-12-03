@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    padding: 0 4.8rem;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f5ff;
+}
+
+.header .logo {
+    height: 3rem;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #212529;
+    transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: #364fc7;
+}
+
+.mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #212529;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+    display: none;
+}
+
+/* ===========================================
+  Hero and Service Section Start
+  ======================================= */
+.section-hero,
+.section-services {
+    padding: 9.6rem 0;
+    background-color: #a5d8ff;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-services {
+    background: #f3f0ff;
+}
+
+.section-hero p,
+.section-services p {
+    font-size: 3.2rem;
+}
+
+main .navbar_2 {
+    text-decoration: none;
+    color: black;
+}
+
+main .navbar_2:hover {
+    color: rgb(91, 99, 99);
+}
+
+/* ===========================================
+Responsive Codes 
+======================================= */
+
+/* below 980px */
+@media (max-width: 980px) {
+
+    .mobile-navbar-btn {
+        display: block;
+        z-index: 999;
+        border: 3px solid #212529;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header .logo {
+        size-adjust: auto;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background: #e7f5ff;
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translate(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .active .navbar {
+        transform: translate(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+        display: block;
+        align-items: center;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+        display: none;
+    }
+
+    /* below 560px */
+    @media (max-width: 560px) {
+        .header {
+            padding: 0.24rem;
+        }
+
+        .header .logo {
+            size-adjust: auto;
+        }
+
+        nav .navbar-list {
+            align-items: center;
+        }
+
+    }
+
+}
